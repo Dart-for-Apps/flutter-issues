@@ -2,6 +2,7 @@
 
 - [설치 이슈](#설치-이슈)
 - [빌드 이슈](#빌드-이슈)
+- [안드로이드 이슈](#안드로이드-이슈)
 
 ## 설치 이슈
 
@@ -20,3 +21,13 @@
 ### `flutter run` 혹은 `flutter build` 시 **android-sdk folder not writable** 관련 에러
 
 에러에 표시되는 android-sdk 폴더로 가서 쓰기 권한 할당
+
+## 안드로이드 이슈
+
+### `broken ANDROID_SDK_ROOT`와 유사한 이유로 에뮬레이터 실행이 안되는경우
+
+1. 안드로이드 스튜디오 메뉴에서 -> Tools -> sdk manager 선택
+2. sdk manager화면에서 **Android SDK Location** 필드에 적힌 주소값 복사
+3. 시스템 환경 설정의 환경 변수에 **ANDROID_SDK_ROOT** 추가 하고 2번에서 복사한 값으로 설정
+4. 안드로이드 스튜디오 완전히 종료했다가 재실해
+5. 에뮬레이터 
