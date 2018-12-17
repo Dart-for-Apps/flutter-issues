@@ -17,6 +17,6 @@
 
 ## 빌드 이슈
 
-### `Run` 혹은 `Build` 시 **android-sdk folder not writable** 관련 에러
+### `flutter run` 혹은 `flutter build` 시 **android-sdk folder not writable** 관련 에러
 
 에러에 표시되는 android-sdk 폴더로 가서 쓰기 권한 할당
