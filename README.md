@@ -22,6 +22,17 @@
 
 에러에 표시되는 android-sdk 폴더로 가서 쓰기 권한 할당
 
+### Dart SDK 혹은 flutter sdk 버전 문제
+
+pub 패키지 저장소에서 다른 패키지를 사용할 때 flutter 버전이나 dart 버전의 요구사항이 달라서 문제가 되는경우,
+보통 플러터 sdk 채널이 dev 채널로 되어있는 경우가 많음. 이 경우 stable/release 채널로 변경해야함
+
+```bash
+flutter channel # 업그레이드 채널이 무엇으로 되어있는지 확인
+flutter channel stable # stable/release 채널로 변경, stable, beta, dev, master 총 3개
+flutter upgrade # 자동으로 플러터와 dart sdk를 모두 변경함
+```
+
 ## 안드로이드 이슈
 
 ### `broken ANDROID_SDK_ROOT`와 유사한 이유로 에뮬레이터 실행이 안되는경우
