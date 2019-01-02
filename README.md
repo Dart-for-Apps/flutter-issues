@@ -33,6 +33,13 @@ flutter channel stable # stable/release 채널로 변경, stable, beta, dev, mas
 flutter upgrade # 자동으로 플러터와 dart sdk를 모두 변경함
 ```
 
+### 파이어베이스 연동시 Cannot fit requested classes in a single dex file 에러
+
+1. `android/app/build.gradle`의 `minSdkVersion`을 21로 수정. 
+2. 같은 파일의 `defaultConfig{}`에 `multiDexEnabled true` 추가.
+
+더 이전의 sdk 버전을 사용하고 싶을 경우 [이 링크](https://developer.android.com/studio/build/multidex)를 
+
 ## 안드로이드 이슈
 
 ### `broken ANDROID_SDK_ROOT`와 유사한 이유로 에뮬레이터 실행이 안되는경우
