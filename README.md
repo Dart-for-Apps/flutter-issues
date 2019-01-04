@@ -3,6 +3,7 @@
 - [설치 이슈](#설치-이슈)
 - [빌드 이슈](#빌드-이슈)
 - [안드로이드 이슈](#안드로이드-이슈)
+- [iOS 이슈](#iOS-이슈)
 
 ## 설치 이슈
 
@@ -32,6 +33,12 @@ flutter channel # 업그레이드 채널이 무엇으로 되어있는지 확인
 flutter channel stable # stable/release 채널로 변경, stable, beta, dev, master 총 3개
 flutter upgrade # 자동으로 플러터와 dart sdk를 모두 변경함
 ```
+
+## iOS 이슈
+
+### Google Signin을 사용하려 할 때 뻗는 경우
+
+iOS에서 `google_sign_in` 플러그인을 사용할 경우에는 반드시 공식 설명서에 써진대로 iOS `info.plist` 설정을 해야한다.
 
 ## 안드로이드 이슈
 
