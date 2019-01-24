@@ -4,6 +4,7 @@
 - [빌드 이슈](#빌드-이슈)
 - [안드로이드 이슈](#안드로이드-이슈)
 - [iOS 이슈](#iOS-이슈)
+- [핫 리로드 이슈](#핫-리로드-이슈)
 
 ## 설치 이슈
 
@@ -68,3 +69,12 @@ iOS에서 `google_sign_in` 플러그인을 사용할 경우에는 반드시 공�
 2. 같은 파일의 `defaultConfig{}`에 `multiDexEnabled true` 추가.
 
 더 이전의 sdk 버전을 사용하고 싶을 경우 [이 링크](https://developer.android.com/studio/build/multidex)를 
+
+## 핫 리로드 이슈
+
+### 핫 리로드를 수행했을 때 앱의 변화가 없는 경우 
+
+1. `State`에 변화를 주는 코드가 추가된 경우 `hot restart`를 통해 `State`를 초기화하고 앱의 처음부터 시작해야 함. 
+2. 위젯 트리가 변경된 경우, `hot restart`를 통해 앱의 처음부터 위젯 트리를 다시 생성해야 함. 
+3. `pubspec.yaml`을 수정하고 `flutter package get`등을 통해 새로운 디펜던시나 에셋을 추가했을 경우, `stop`하고 다시 `run`해서 빌드부터 다시 해야함.
+4. `iOS`나 `Android`의 메니페스트 파일 등을 수정했을 경우, `stop`하고 다시 `run`해서 빌드부터 다시 해야함. 
