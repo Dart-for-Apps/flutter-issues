@@ -6,6 +6,7 @@
 - [iOS 이슈](#iOS-이슈)
 - [핫 리로드 이슈](#핫-리로드-이슈)
 - [Async 이슈](#Async-이슈)
+- [Life Cycle](#Life-Cycle)
 
 ## 설치 이슈
 
@@ -88,3 +89,9 @@ Firebase 등의 stream 서비스를 이용하면 종종 해당 서비스를 asyn
 이런 때에도 최대한 `await` 구문을 사용하지 않고 모두 `Future`나 `async`로 처리할 수 있는 루틴을 만들어야 한다. 
 
 그렇지 않을 경우 foreground에서 view를 관리하는 작업과 중복되어 과부하로 인해 앱의 전체적인 성능이 저하될 우려가 있다. 
+
+## Life Cycle
+
+### dispose() 메소드의 중요성
+
+- `Stream` 에 대해서 listen을 하고 있는 경우 `dispose()` 메소드 내에서 제대로 `cancel` 해주지 않을 경우, 뷰가 없음에도 불구하고 계속 listen 하고 있는 문제가 발생함. 이로 인해 cpu stall/waste 및 memory leak이 발생함. 이와 같은 async 형태의 Stream은 반드시 dispose에서 cancel 해야함. 
