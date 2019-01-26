@@ -94,6 +94,6 @@ Firebase 등의 stream 서비스를 이용하면 종종 해당 서비스를 asyn
 
 ### dispose() 메소드의 중요성
 
-- `Stream` 에 대해서 listen을 하고 있는 경우 `dispose()` 메소드 내에서 제대로 `cancel` 해주지 않을 경우, 뷰가 없음에도 불구하고 계속 listen 하고 있는 문제가 발생함. 이로 인해 cpu stall/waste 및 memory leak이 발생함. 이와 같은 async 형태의 Stream은 반드시 dispose에서 cancel 해야함. 
+`Stream` 에 대해서 listen을 하고 있는 경우 `dispose()` 메소드 내에서 제대로 `cancel` 해주지 않을 경우, 뷰가 없음에도 불구하고 계속 listen 하고 있는 문제가 발생함. 이로 인해 cpu stall/waste 및 memory leak이 발생함. 이와 같은 async 형태의 Stream은 반드시 dispose에서 cancel 해야함. 
 
 `Stream`을 사용하는 경우에는 `life cycle`에 따라서 코드의 위치에 따라 중복 `listen`이 될 수 있으므로 이를 잘 고려해서 코드를 구성해야함. 
